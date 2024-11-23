@@ -26,11 +26,16 @@ body {
     position: relative;
     max-width: 100%;
     margin: 20px 0;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }
-.video-container video {
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    max-width: 800px;
+    height: 100%;
 }
 </style>
 
@@ -42,9 +47,6 @@ body {
     </div>
 
     <div class="video-container">
-        <video controls playsinline>
-            <source src="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?rlkey=ndridp9st4ugw3qqztlo9rb6q&raw=1" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/k7KZbnyYUsl75rBVvkq" allowfullscreen></iframe>
     </div>
 </div>
