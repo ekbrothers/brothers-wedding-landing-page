@@ -10,6 +10,7 @@
             margin: 0 auto;
             padding: 20px;
             text-align: center;
+            background-color: #f5f5f5;
         }
         .container {
             background-color: white;
@@ -22,15 +23,30 @@
             max-width: 300px;
             margin: 20px auto;
         }
-        .video-container {
-            position: relative;
-            max-width: 100%;
-            margin: 20px 0;
+        .download-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
         }
-        .video-container video {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+        .info-text {
+            color: #666;
+            margin: 10px 0;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -42,11 +58,13 @@
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ekbrothers.github.io/brothers-wedding-landing-page/" alt="QR Code" style="max-width: 100%; height: auto;">
         </div>
 
-        <div class="video-container">
-            <video controls>
-                <source src="https://www.mediafire.com/file/n4ctkp214usbv9g/Wedding_Final.mp4/file" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="download-section">
+            <h2>Wedding Video</h2>
+            <p class="info-text">Click the button below to download our wedding video</p>
+            <a href="https://www.mediafire.com/file/n4ctkp214usbv9g/Wedding_Final.mp4/file" class="download-button" target="_blank">
+                Download Wedding Video
+            </a>
+            <p class="info-text">The video will open in MediaFire where you can download it</p>
         </div>
     </div>
 </body>
