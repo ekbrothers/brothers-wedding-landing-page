@@ -36,6 +36,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    border: 0;
 }
 </style>
 
@@ -47,6 +48,6 @@ body {
     </div>
 
     <div class="video-container">
-        <iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/k7KZbnyYUsl75rBVvkq" allowfullscreen></iframe>
+        <iframe src="https://www.dailymotion.com/embed/video/k7KZbnyYUsl75rBVvkq?autoplay=0" width="100%" height="100%" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 </div>
