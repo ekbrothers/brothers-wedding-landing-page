@@ -24,18 +24,13 @@ body {
 }
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
     max-width: 100%;
     margin: 20px 0;
 }
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-container video {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-width: 800px;
 }
 </style>
 
@@ -47,6 +42,9 @@ body {
     </div>
 
     <div class="video-container">
-        <iframe src="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?rlkey=ndridp9st4ugw3qqztlo9rb6q&st=mjda0jld&raw=1" frameborder="0" allowfullscreen></iframe>
+        <video controls playsinline>
+            <source src="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?rlkey=ndridp9st4ugw3qqztlo9rb6q&raw=1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
