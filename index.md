@@ -30,7 +30,7 @@ body {
     max-width: 100%;
     margin: 20px 0;
 }
-.video-container video {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -43,15 +43,10 @@ body {
     <h1>Welcome to Our Wedding Media Page</h1>
     
     <div class="qr-code">
-        <!-- Placeholder for QR code -->
-        <img src="qr-code.png" alt="QR Code" style="max-width: 100%; height: auto;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ekbrothers.github.io/brothers-wedding-landing-page/" alt="QR Code" style="max-width: 100%; height: auto;">
     </div>
 
     <div class="video-container">
-        <!-- Placeholder for video -->
-        <video controls>
-            <source src="wedding-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <iframe src="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?rlkey=ndridp9st4ugw3qqztlo9rb6q&st=mjda0jld&raw=1" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
