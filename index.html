@@ -2,69 +2,113 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #faf7f5;
+            --bg-secondary: white;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --heading-color: #2c3e50;
+            --button-bg: #3498db;
+            --button-hover: #2980b9;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --heading-color: #ffffff;
+            --button-bg: #2980b9;
+            --button-hover: #3498db;
+            --shadow-color: rgba(0,0,0,0.3);
+        }
+
         body {
             font-family: 'Lato', sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
-            background-color: #faf7f5;
-            color: #333;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px !important;
+            }
+            h1 {
+                font-size: 2em !important;
+            }
+        }
+
         h1, h2 {
             font-family: 'Playfair Display', serif;
-            color: #2c3e50;
+            color: var(--heading-color);
         }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 0.5em;
             font-weight: 700;
         }
+
         .container {
-            background-color: white;
+            background-color: var(--bg-secondary);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px var(--shadow-color);
             margin-top: 20px;
         }
+
         .qr-code {
             max-width: 300px;
             margin: 30px auto;
             padding: 20px;
-            background: #fff;
+            background: var(--bg-secondary);
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px var(--shadow-color);
         }
-        .video-section {
+
+        .video-section, .theater-section {
             margin: 40px 0;
             padding: 30px;
-            background-color: #fff;
+            background-color: var(--bg-secondary);
             border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px var(--shadow-color);
         }
+
         .video-container {
             position: relative;
             width: 100%;
             margin: 20px 0;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px var(--shadow-color);
         }
+
         video {
             width: 100%;
             display: block;
             border-radius: 8px;
         }
+
         .download-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #3498db;
+            background-color: var(--button-bg);
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -72,22 +116,91 @@
             margin: 20px 0;
             transition: all 0.3s ease;
             font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px var(--shadow-color);
         }
+
         .download-button:hover {
-            background-color: #2980b9;
+            background-color: var(--button-hover);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px var(--shadow-color);
         }
+
         .info-text {
-            color: #666;
+            color: var(--text-secondary);
             margin: 15px 0;
             font-size: 16px;
             font-weight: 300;
         }
+
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            width: 60px;
+            position: relative;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #66bb6a;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .theater-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
     </style>
 </head>
 <body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="checkbox">
+            <div class="slider"></div>
+        </label>
+    </div>
+
     <div class="container">
         <h1>Welcome to Our Wedding Media Page</h1>
         
@@ -108,6 +221,38 @@
                 Download Wedding Video
             </a>
         </div>
+
+        <div class="theater-section">
+            <h2>The Historic Venue</h2>
+            <p class="info-text">Our wedding was held at this beautiful historic theater</p>
+            <!-- Add your theater postcard image here -->
+            <img class="theater-image" src="theater-postcard.jpg" alt="Historic Theater Postcard" style="display: none;">
+            <p class="info-text">Once you provide the theater postcard image, we can showcase it here and potentially add more interactive features or historical information about the venue.</p>
+        </div>
     </div>
+
+    <script>
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
 </body>
 </html>
