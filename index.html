@@ -23,11 +23,26 @@
             max-width: 300px;
             margin: 20px auto;
         }
-        .download-section {
+        .video-section {
             margin: 40px 0;
             padding: 20px;
             background-color: #f8f9fa;
             border-radius: 8px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 20px 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
         }
         .download-button {
             display: inline-block;
@@ -58,13 +73,18 @@
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ekbrothers.github.io/brothers-wedding-landing-page/" alt="QR Code" style="max-width: 100%; height: auto;">
         </div>
 
-        <div class="download-section">
+        <div class="video-section">
             <h2>Wedding Video</h2>
-            <p class="info-text">Click the button below to download our wedding video</p>
-            <a href="https://www.mediafire.com/file/n4ctkp214usbv9g/Wedding_Final.mp4/file" class="download-button" target="_blank">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?raw=1" 
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <p class="info-text">If the video doesn't play, you can download it using the button below</p>
+            <a href="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?rlkey=ndridp9st4ugw3qqztlo9rb6q&st=9thtocsu&dl=0" class="download-button" target="_blank">
                 Download Wedding Video
             </a>
-            <p class="info-text">The video will open in MediaFire where you can download it</p>
         </div>
     </div>
 </body>
