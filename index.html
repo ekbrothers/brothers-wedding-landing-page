@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Media</title>
+    <title>Our Wedding Video</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -82,47 +82,12 @@
             box-shadow: 0 2px 4px var(--shadow-color);
         }
 
-        .video-section, .theater-section {
+        .theater-section {
             margin: 40px 0;
             padding: 30px;
             background-color: var(--bg-secondary);
             border-radius: 12px;
             box-shadow: 0 2px 4px var(--shadow-color);
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            margin: 20px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px var(--shadow-color);
-        }
-
-        video {
-            width: 100%;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .download-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--button-bg);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            box-shadow: 0 2px 4px var(--shadow-color);
-        }
-
-        .download-button:hover {
-            background-color: var(--button-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px var(--shadow-color);
         }
 
         .info-text {
@@ -191,6 +156,11 @@
             margin: 20px 0;
             box-shadow: 0 4px 6px var(--shadow-color);
         }
+
+        .upload-section {
+            text-align: center;
+            margin: 40px 0;
+        }
     </style>
 </head>
 <body>
@@ -202,32 +172,20 @@
     </div>
 
     <div class="container">
-        <h1>Welcome to Our Wedding Media Page</h1>
+        <h1>Our Wedding Video</h1>
         
-        <div class="qr-code">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ekbrothers.github.io/brothers-wedding-landing-page/" alt="QR Code" style="max-width: 100%; height: auto;">
-        </div>
-
-        <div class="video-section">
-            <h2>Our Special Day</h2>
-            <div class="video-container">
-                <video controls>
-                    <source src="https://evanbrothers.net/brothers-wedding.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <div class="upload-section">
+            <h2>Share Your Memories</h2>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ekbrothers.github.io/brothers-wedding-landing-page/" alt="QR Code" style="max-width: 100%; height: auto;">
             </div>
-            <p class="info-text">Relive the magical moments of our wedding day</p>
-            <a href="https://evanbrothers.net/brothers-wedding.mp4" class="download-button" download>
-                Download Wedding Video
-            </a>
+            <p class="info-text">Scan this QR code to upload your photos and videos from our special day!</p>
         </div>
 
         <div class="theater-section">
-            <h2>The Historic Venue</h2>
-            <p class="info-text">Our wedding was held at this beautiful historic theater</p>
-            <!-- Add your theater postcard image here -->
-            <img class="theater-image" src="theater-postcard.jpg" alt="Historic Theater Postcard" style="display: none;">
-            <p class="info-text">Once you provide the theater postcard image, we can showcase it here and potentially add more interactive features or historical information about the venue.</p>
+            <h2>The Historic Russell Theatre</h2>
+            <img class="theater-image" src="Postcard_of_the_Russell_Theatre.jpg" alt="Historic Russell Theatre Postcard">
+            <p class="info-text">Our wedding was held at the beautiful historic Russell Theatre, a cherished landmark that provided the perfect backdrop for our special day.</p>
         </div>
     </div>
 
