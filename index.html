@@ -64,6 +64,7 @@
             font-size: 14px;
         }
     </style>
+    <script src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="j1z5ej2uhw3bhs9"></script>
 </head>
 <body>
     <div class="container">
@@ -75,17 +76,28 @@
 
         <div class="video-section">
             <h2>Wedding Video</h2>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?raw=1" 
-                    allowfullscreen
-                ></iframe>
-            </div>
+            <div id="video-embed"></div>
             <p class="info-text">If the video doesn't play, you can download it using the button below</p>
             <a href="https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4?rlkey=ndridp9st4ugw3qqztlo9rb6q&st=9thtocsu&dl=0" class="download-button" target="_blank">
                 Download Wedding Video
             </a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+                link: "https://www.dropbox.com/scl/fi/iywxwxv6yrsa1l2czasnk/Wedding-Final.mp4",
+                file: {
+                    zoom: false
+                }
+            };
+            
+            var container = document.getElementById('video-embed');
+            if (container) {
+                Dropbox.embed(options, container);
+            }
+        });
+    </script>
 </body>
 </html>
