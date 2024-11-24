@@ -82,12 +82,47 @@
             box-shadow: 0 2px 4px var(--shadow-color);
         }
 
-        .theater-section {
+        .video-section, .theater-section {
             margin: 40px 0;
             padding: 30px;
             background-color: var(--bg-secondary);
             border-radius: 12px;
             box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--button-bg);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .download-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
         }
 
         .info-text {
@@ -174,6 +209,20 @@
     <div class="container">
         <h1>Our Wedding Video</h1>
         
+        <div class="video-section">
+            <h2>Our Special Day</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="https://evanbrothers.net/brothers-wedding.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="info-text">Relive the magical moments of our wedding day</p>
+            <a href="https://evanbrothers.net/brothers-wedding.mp4" class="download-button" download>
+                Download Wedding Video
+            </a>
+        </div>
+
         <div class="upload-section">
             <h2>Share Your Memories</h2>
             <div class="qr-code">
