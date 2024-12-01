@@ -73,15 +73,6 @@
             margin-top: 20px;
         }
 
-        .qr-code {
-            max-width: 300px;
-            margin: 30px auto;
-            padding: 20px;
-            background: var(--bg-secondary);
-            border-radius: 10px;
-            box-shadow: 0 2px 4px var(--shadow-color);
-        }
-
         .video-section, .theater-section {
             margin: 40px 0;
             padding: 30px;
@@ -105,7 +96,7 @@
             border-radius: 8px;
         }
 
-        .download-button {
+        .download-button, .share-button {
             display: inline-block;
             padding: 15px 30px;
             background-color: var(--button-bg);
@@ -117,9 +108,11 @@
             transition: all 0.3s ease;
             font-weight: 500;
             box-shadow: 0 2px 4px var(--shadow-color);
+            cursor: pointer;
+            border: none;
         }
 
-        .download-button:hover {
+        .download-button:hover, .share-button:hover {
             background-color: var(--button-hover);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px var(--shadow-color);
@@ -195,6 +188,10 @@
         .upload-section {
             text-align: center;
             margin: 40px 0;
+            padding: 30px;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px var(--shadow-color);
         }
     </style>
 </head>
@@ -207,14 +204,11 @@
     </div>
 
     <div class="container">
-        <h1>Please Share Your Memories<h1>
+        <h1>Please Share Your Memories</h1>
 
         <div class="upload-section">
-           
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ekbrothers.github.io/brothers-wedding-landing-page/" alt="QR Code" style="max-width: 100%; height: auto;">
-            </div>
-            <p class="info-text">Scan this QR code to upload your photos and videos from our wedding day</p>
+            <button class="share-button" id="shareButton">Share Your Photos & Videos</button>
+            <p class="info-text">Click the button above to share your photos and videos from our wedding day</p>
         </div>
 
         <div class="video-section">
@@ -236,11 +230,10 @@
         </div>
     </div>
 
-
-
     <script>
         const toggleSwitch = document.querySelector('#checkbox');
         const currentTheme = localStorage.getItem('theme');
+        const shareButton = document.querySelector('#shareButton');
 
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
@@ -260,6 +253,12 @@
         }
 
         toggleSwitch.addEventListener('change', switchTheme, false);
+
+        // Placeholder for share button functionality
+        shareButton.addEventListener('click', function() {
+            // This will be replaced with the actual sharing platform link
+            alert('Sharing platform link will be added here');
+        });
     </script>
 </body>
 </html>
