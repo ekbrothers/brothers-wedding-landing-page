@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!-- Previous head and style sections remain exactly the same -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +97,7 @@
             border-radius: 8px;
         }
 
-        .download-button, .share-button {
+        .download-button, .share-button, .prints-button {
             display: inline-block;
             padding: 15px 30px;
             background-color: var(--button-bg);
@@ -104,7 +105,7 @@
             text-decoration: none;
             border-radius: 8px;
             font-size: 18px;
-            margin: 20px 0;
+            margin: 20px 10px;
             transition: all 0.3s ease;
             font-weight: 500;
             box-shadow: 0 2px 4px var(--shadow-color);
@@ -112,7 +113,7 @@
             border: none;
         }
 
-        .download-button:hover, .share-button:hover {
+        .download-button:hover, .share-button:hover, .prints-button:hover {
             background-color: var(--button-hover);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px var(--shadow-color);
@@ -123,6 +124,19 @@
             margin: 15px 0;
             font-size: 16px;
             font-weight: 300;
+        }
+
+        .video-note {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin: 25px auto;
+            max-width: 600px;
+            line-height: 1.8;
+            font-size: 17px;
+            padding: 15px;
+            border-top: 1px solid rgba(102, 102, 102, 0.2);
+            border-bottom: 1px solid rgba(102, 102, 102, 0.2);
         }
 
         .theme-switch-wrapper {
@@ -193,6 +207,13 @@
             border-radius: 12px;
             box-shadow: 0 2px 4px var(--shadow-color);
         }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
     </style>
 </head>
 <body>
@@ -207,8 +228,13 @@
         <h1>Please Share Your Memories</h1>
 
         <div class="upload-section">
-            <button class="share-button" id="shareButton">Share Your Photos & Videos Here</button>
-            <p class="info-text">Click the button above to share your photos and videos from our wedding day</p>
+            <div class="button-group">
+                <button class="share-button" id="shareButton">Share Your Photos & Videos Here</button>
+                <p class="info-text">Click the button above to share your photos and videos from our wedding day</p>
+                <a href="https://www.printique.com/app/profile/Photochica12/gallery/matthew-and-susans-wedding-1#" class="prints-button" target="_blank">
+                    Order Wedding Prints
+                </a>
+            </div>
         </div>
 
         <div class="video-section">
@@ -222,6 +248,7 @@
             <a href="https://evanbrothers.net/brothers-wedding.mp4" class="download-button" download>
                 Download Wedding Video
             </a>
+            <p class="video-note">This special slideshow was created for and shown during our wedding celebration, featuring cherished memories from our journey together. While we couldn't include every wonderful person who has touched our lives, please know that each of you holds a special place in our hearts and contributed to making our wedding day truly magical.</p>
             <div class="theater-section">
                 <h2>The Historic Russell Theatre</h2>
                 <img class="theater-image" src="Postcard_of_the_Russell_Theatre.jpg" alt="Historic Russell Theatre Postcard">
